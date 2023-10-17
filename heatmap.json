@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing number of deaths based on Region of Origin and Region of Incident-1.",
+  
+     "data": {
+        "url": "Global Missing Migrants Dataset.csv" 
+    },
+    "height":100,
+"width": "container",
+"mark": "rect",
+    "encoding": {
+        "y": {
+            "field": "Cause of Death",
+            "type": "nominal",
+            "title":  "Cause of Death",
+            "axis": {
+                "labelLimit": 500, 
+                    "titleAngle": 0,
+                    "titleX": -45,
+                    "titleFontSize": 13,
+                    "labelColor": "white",
+                    "titleColor": "white"
+                
+            }
+        },
+        "x": {
+            "field": "Region of Incident-1",
+            "type": "nominal",
+            "title": "Region of Incident",
+            
+            "axis": {
+                "labelAngle": -25,
+                "titleY": 60,
+                "titleFontSize": 13,
+                "labelColor": "white",
+                "titleColor": "white"
+            }
+        },
+      "color": {
+        "field": "Number of Dead",
+        "aggregate": "sum",
+        "type": "quantitative",
+        "scale": {
+            "type": "log",
+        
+            "range": [
+                "FFFFFF",
+                "#FFCCCC",
+                "#C40000",
+                "black"
+            ]
+        },
+        "legend":{
+            "labelColor": "white",
+            "titleColor": "white",
+            "orient": "bottom",
+            "titleFontSize": 10,
+            "labelFontSize":8
+        }
+        
+    },
+   
+        "tooltip": [
+          
+            {
+                "field": "Cause of Death",
+                "type": "nominal",
+                "title": "Cause of Death"
+            },
+            {
+                "field": "Number of Dead",
+                 "aggregate": "sum",
+                "type": "quantitative",
+                "title": "Number of Dead"
+            },
+            
+            {
+                "field": "Region of Incident-1",
+                "type": "nominal",
+                "title": "Region of Incident"
+            }]
+        
+    
+    },
+    "config": {
+        "axis": {
+
+            "titleY": -10
+            
+        },
+       
+            "background": "transparent"
+        
+    }
+}

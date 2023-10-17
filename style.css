@@ -1,0 +1,201 @@
+.container-fluid {
+  background-color: black;
+  color: white;
+
+}
+
+.container {
+  background-color: black;
+  color: white;
+
+}
+
+
+
+
+/* 家属的话 */
+.family {
+  background-image: url('dv2pic/Mothers-of-missing-migrants-during-a-sit-in-at-the-Italian-embassy-in-Tunis.jpg');
+  /* 替换为你的图片路径 */
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  /* 根据需要调整 */
+
+  padding-left: 0;
+  /* 添加这一行 */
+  padding-right: 0;
+  /* 添加这一行 */
+
+  position: relative;
+  min-height: 500px;
+  /* 根据背景图片的高度来调整 */
+  width: 100%;
+}
+
+.text-block {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 半透明的黑色背景 */
+  padding: 20px;
+  max-width: 70%;
+  /* 根据需要调整 */
+  margin-left: 5%;
+  /* 使其偏左 */
+
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  /* 每个文本块之间的间距 */
+  padding: 2vw;
+  /* 文本块内部的 padding */
+  border-radius: 5px;
+  /* 为方块添加轻微的圆角 */
+}
+
+/* 为每段文字调整样式 */
+.text-block p {
+  color: #ffffff;
+  /* 白色文字 */
+  margin: 0;
+}
+
+
+.row.data {
+
+  background-image: url('dv2pic/灰色背景page_1.png');
+
+  background-size: cover;
+  /* 这将使图片覆盖满宽度 */
+
+  position: relative;
+  /* 确保内容始终位于背景图片之上 */
+}
+
+/* 为每个块添加半透明的底色 */
+.block {
+  background-color: rgba(128, 128, 128, 0.4);
+  /* 这里采用白色半透明，可以根据需求更改颜色 */
+  padding: 20px;
+  /* 内部间距确保内容不会太贴近边缘 */
+  margin: 10vw 0;
+  /* 为每个块上下添加10px的外部间距，使块与块之间有距离 */
+}
+
+
+/* 为了确保内容不超出块的范围，可以为.col添加一些样式 */
+.col-6,
+.col-7,
+.col-9,
+.col-12 {
+  box-sizing: border-box;
+  padding: 0 15px;
+  /* 这样确保内容有一些间距，不会贴近边缘 */
+}
+
+.col-6 img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+.container-fluid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.endarea {
+  position: relative;
+  height: 80vw;
+  width: 100%;
+  /* adjust height as per your needs */
+
+  background-image: url('dv2pic/endpicWechatIMG.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.text-3 {
+  position: absolute;
+  top: 10%;
+  /* adjust this to move the text up or down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  /* adjust width as per your needs */
+  text-align: center;
+  color: white;
+  /* or any other color that makes the text readable on the image */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* optional: a semi-transparent background for better text readability */
+}
+
+.text-3 p {
+  text-align: center;
+  /* 文本居中 */
+  margin-bottom: 2em;
+  /* 为每个段落下方增加空间 */
+}
+
+.region-title {
+  margin-left: 7vw;
+  /* 根据.block的外边距调整 */
+  margin-right: 5vw;
+  /* 根据.block的外边距调整 */
+  margin-bottom: 2vw;
+  /* 添加下边距 */
+
+    
+}
+
+.region-title h4 {
+  font-size: 2em;
+  font-weight: bold;
+  
+}
+
+
+.text-1,
+.text-2,
+.text-3 {
+  font-size: 1.2em;
+  /* 你可以根据需要调整字体大小 */
+
+}
+
+.height1 {
+  height: 27vw;
+  /* 你可以根据需要调整第一个区域的高度 */
+  margin-top: 30px;
+}
+
+.height2 {
+  height: 30vw;
+  /* 你可以根据需要调整第二个区域的高度 */
+
+}
+
+.family .text-block p+p {
+  margin-top: 20px;
+  /* Adjust the value to increase or decrease spacing as required */
+}
+
+/* 2. Adding space between map and lollipop chart elements */
+#map {
+  margin-bottom: 10vw;
+  /* Adjust the value to increase or decrease spacing as required */
+}
+
+.annotation{
+  margin-top: 5vw; 
+  margin-bottom: 5vw;}
+
+    .text-3 {
+      font-size: 1.5em;
+      /* Adjust the size as per your requirements. */
+      margin-top: 20px;
+      /* Adjust the margin for desired downward shift. */
+    }

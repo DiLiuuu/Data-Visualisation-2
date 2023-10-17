@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": "container",
+"height": 200,
+"description": "Cause of death",
+"config": { "background": "transparent"
+},
+"view": {
+    "stroke":null,
+    "fill": null
+},
+    "data": {
+        "url": "Global Missing Migrants Dataset.csv"
+    },
+
+    
+    "encoding": {
+        "y": {
+            "field": "Cause of Death",
+            "type": "nominal",
+            "sort": "-x",
+            "axis": {
+                "ticks": true,
+                "grid": false,
+                "labels": false,
+                "title": null
+            }
+        },
+        "x": {
+            "title":"Total Number of Dead and Missing",
+            "field": "Total Number of Dead and Missing",
+            "type": "quantitative",
+            "axis":null,
+            "aggregate": "sum"
+        },
+        "color": {
+            "condition": {
+                "test": "datum['Cause of Death'] === 'Drowning'",
+                "value": "orange"
+            },
+            "value": "#181818"
+        }
+        
+    },
+    
+    "layer": [
+      
+        {
+            "mark": "bar"
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 5,
+                "x": 5
+            },
+            "encoding": {
+                "text": {
+                    "field": "Cause of Death"
+                },
+                "detail": {
+                    "aggregate": "count"
+                },
+                "color": {
+                    "value": "white"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": -2
+                
+            },
+            "encoding": {
+               "text": {
+                "condition": {
+                    "test": "datum['Cause of Death'] === 'Drowning'",
+                    "field": "Total Number of Dead and Missing",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "value": ""
+            },
+                "color":{ "value": "black"}
+                
+                
+            }
+        }
+    ]
+}
+

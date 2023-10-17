@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 250,
+    "height": 250,
+    "config": {
+        "background": "transparent"
+    },
+    "view": {
+        "stroke": null,
+        "fill": null
+    },
+    "data": {
+        "url": "Global Missing Migrants Dataset.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum['Incident year'] !== 2023"
+        }
+    ],
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "field": "Incident year",
+            "type": "temporal",
+            "axis": {
+                "title": "Year",
+                "labelColor": "white",
+                "titleColor": "white"
+            }
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Total Number of Dead and Missing",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of People",
+                "labelColor": "white",
+                "titleColor": "white"
+            }
+        },
+        "color": {
+            "field": "Region of Incident",
+            "type": "nominal",
+            "legend": {
+                "title": "Region of Incident",
+                "labelColor": "white",
+                "titleColor": "white"
+            },
+            "scale": {
+                "range": [
+                    "red",
+                    "#770000",
+                    "whitesmoke",
+                    "#181818",
+                    "grey"
+                ]
+            }
+        }
+    }
+}

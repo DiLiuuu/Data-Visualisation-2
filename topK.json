@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 270,
+    "description": "Migration route",
+    "config": {
+        "background": "transparent"
+    },
+    "view": {
+        "stroke": null,
+        "fill": null
+    },
+    "data": {
+        "url": "Global Missing Migrants Dataset.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "and": [
+                    "datum['Migration route'] !== null",
+                    "datum['Migration route'] !== ''"
+                ]
+            }
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Total Number of Dead and Missing",
+                    "as": "total_dead_and_missing"
+                }
+            ],
+            "groupby": [
+                "Migration route"
+            ]
+        },
+        {
+            "filter": "datum.total_dead_and_missing > 3000"
+        }
+    ],
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "y": {
+                    "field": "Migration route",
+                    "type": "nominal",
+                    "sort": "-x",
+                    "axis": {
+                        "labelColor": "white",
+                        "titleColor": "white"
+                    }
+                },
+                "x": {
+                    "field": "total_dead_and_missing",
+                    "type": "quantitative",
+                    "axis": null
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum['Migration route'] === 'Central Mediterranean'",
+                        "value": "orange"
+                    },
+                    "value": "#181818"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": 28.5
+            },
+            "encoding": {
+                "y": {
+                    "field": "Migration route",
+                    "type": "nominal",
+                    "sort": "-x"
+                },
+                "x": {
+                    "field": "total_dead_and_missing",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "total_dead_and_missing",
+                    "type": "quantitative"
+                },
+                "color": {
+                    
+                    "value": "#F5DEB3"
+                }
+            }
+        }
+    ]
+}

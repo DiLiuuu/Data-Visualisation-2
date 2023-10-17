@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {
+        "background": "transparent"
+    },
+    "view": {
+        "stroke": null,
+        "fill": null
+    },
+     "data": {
+        "url": "Global Missing Migrants Dataset.csv"
+    },
+"width": "container",    
+"height":220,
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "width": 14
+            },
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "Incident year",
+                        "type": "ordinal",
+                        "title": "Incident Year"
+                    },
+                    {
+                        "field": "Number of Children",
+                        "type": "quantitative",
+                        "aggregate": "sum",
+                        "title": "Number of Dead and Missing Children"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "baseline": "bottom",
+                "dy":-5
+            },
+            "encoding": {
+               "text": {
+                "field": "Number of Children",
+                "type": "quantitative",
+                "aggregate": "sum",
+                "condition": {
+                "test": "datum['Incident year'] !== '2019'",
+                "value": ""
+                }
+            },
+                "color": {
+                    "value": "#F5DEB3"
+                }
+            }}
+        ],
+        "encoding": {
+            "x": {
+                "field": "Incident year",
+                "type": "ordinal",
+                "title": "Incident Year",
+                "axis": {
+                    "tickMinStep": 1,
+                    "labelAngle": -25,
+                    "labelColor": "white",
+                    "titleColor": "white"
+                }
+                
+            },
+            "y": {
+                "aggregate": "sum",
+                "field": "Number of Children",
+                "type": "quantitative",
+                "title": "Total Number of Children Dead and Missing",
+                "axis": {
+                    "labelLimit": 10000,
+                    "labelColor": "white",
+                    "titleColor": "white"
+                }
+            },
+            "color": {
+                "value": "#181818"
+            }
+        }
+    }

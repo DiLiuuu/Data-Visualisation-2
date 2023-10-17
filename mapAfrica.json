@@ -1,0 +1,129 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+   "width": "container",
+"height": 750,
+    "config": {
+        "background": "transparent"
+    },
+    "description": "Global Missing Migrant",
+    "projection": {
+        "type": "equalEarth",
+        "center": [
+            20,
+            5
+        ], 
+        "scale": 500
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "ne_50m_admin_0_countries.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_50m_admin_0_countries"
+                }
+            },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#181818",
+            "stroke": "#404040"
+        }
+        },
+        
+        {
+            "data": {
+                "url": "Global Missing Migrants Dataset.csv"
+            },
+           "transform": [
+            {
+                "filter": "datum['Region of Incident'] === 'Africa'"
+            }
+        ],
+            "mark": {
+                "type": "circle",
+                "filled": true
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+            "size": {
+                "field": "Total Number of Dead and Missing",
+                "type": "quantitative",
+                "title": "Number of Dead and Missing",
+                "scale": {
+                    "type": "log",
+                    "domain": [
+                        1,
+                        1100
+                    ],
+                    "range": [
+                        50,
+                        600
+                    ]
+                },
+                "legend": null
+            },
+            "opacity": {
+                "field": "Total Number of Dead and Missing",
+                "type": "quantitative",
+                "scale": {
+                    "domain": [
+                        1,
+                        1100
+                    ],
+                    "range": [
+                        0.3,
+                        0.6
+                    ]
+                }
+            },
+            "color": {
+                "value": "orange"
+            },
+                "tooltip": [
+                    {
+                        "field": "Incident year",
+                        "type": "quantitative",
+                        "title": "Incident year"
+                    },
+                    {
+                        "field": "Cause of Death",
+                        "type": "nominal",
+                        "title": "Cause of Death"
+                    },
+                    {
+                        "field": "Total Number of Dead and Missing",
+                        "type": "quantitative",
+                        "title": "Total Number of Dead and Missing"
+                    },
+                    {
+                        "field": "Number of Survivors",
+                        "type": "quantitative",
+                        "title": "Number of Survivors"
+                    },
+                    {
+                        "field": "Region of Incident-1",
+                        "type": "nominal",
+                        "title": "Region of Incident"
+                    },
+                    {
+                        "field": "Location of death",
+                        "type": "nominal",
+                        "title": "Location of death"
+                    },
+                    {
+                        "field": "Region of Origin",
+                        "type": "nominal",
+                        "title": "Region of Origin"
+                    }
+                ]
+            }
+        }
+    ]
+}
