@@ -30,7 +30,12 @@
             "title":"Total Number of Dead and Missing",
             "field": "Total Number of Dead and Missing",
             "type": "quantitative",
-            "axis":null,
+            "axis":
+            {
+                "grid": false,
+                "labelColor":"white",
+                "titleColor":"white"
+            },
             "aggregate": "sum"
         },
         "color": {
