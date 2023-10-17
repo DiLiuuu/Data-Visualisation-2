@@ -3,7 +3,7 @@
     "description": "A heatmap showing number of deaths based on Region of Origin and Region of Incident-1.",
   
      "data": {
-        "url": "Global Missing Migrants Dataset.csv" 
+        "url": "https://raw.githubusercontent.com/DiLiuuu/Data-Visualisation-2/main/Global%20Missing%20Migrants%20Dataset.csv" 
     },
     "height":100,
 "width": "container",
