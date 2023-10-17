@@ -72,7 +72,7 @@
                 "type": "text",
                 "align": "right",
                 "baseline": "middle",
-                "dx": 28.5
+                "dx": -5
             },
             "encoding": {
                 "y": {
@@ -86,11 +86,15 @@
                 },
                 "text": {
                     "field": "total_dead_and_missing",
-                    "type": "quantitative"
+                    "type": "quantitative",
+                    "condition": {
+                        "test": "datum['Migration route'] !== 'Central Mediterranean'",
+                        "value": ""
+                    }
                 },
                 "color": {
                     
-                    "value": "#F5DEB3"
+                    "value": "orange"
                 }
             }
         }
