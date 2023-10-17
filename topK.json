@@ -51,16 +51,18 @@
                         "titleColor": "white"
                     }
                 },
-                "x": {
+                  "x": {
+                    "title": "Total Number of Dead and Missing",
                     "field": "total_dead_and_missing",
                     "type": "quantitative",
-                    "axis": null
+                    "axis": {
+                        "grid": false,
+                        "labelColor": "white",
+                        "titleColor": "white"
+                    }
                 },
                 "color": {
-                    "condition": {
-                        "test": "datum['Migration route'] === 'Central Mediterranean'",
-                        "value": "orange"
-                    },
+                   
                     "value": "#181818"
                 }
             }
